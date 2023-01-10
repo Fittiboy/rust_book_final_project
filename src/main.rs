@@ -32,11 +32,6 @@ fn handle_connection(mut stream: TcpStream) {
         }
         _ => ("HTTP/1.1 400 NOT FOUND", "src/404.html"),
     };
-    // let (status_line, filename) = if request_line == "GET / HTTP/1.1" {
-    //     ("HTTP/1.1 200 OK", "src/index.html")
-    // } else {
-    //     ("HTTP/1.1 404 NOT FOUND", "src/404.html")
-    // };
 
     let contents = fs::read_to_string(filename).unwrap();
     let length = contents.len();
