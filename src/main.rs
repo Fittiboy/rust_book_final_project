@@ -17,9 +17,9 @@ fn main() {
         pool.execute(|| {
             handle_connection(stream);
         });
-
-        println!("Server shutting down.");
     }
+
+    println!("Server shutting down.");
 }
 
 fn handle_connection(mut stream: TcpStream) {
